@@ -29,8 +29,8 @@ export const UserList = ({ users }: UserListProps) => {
         />
       </div>
 
-      <div>
-        <div className="grid grid-cols-[1fr_1fr_2fr_1fr_1fr] gap-4 border-b-2 border-white  pb-2 font-semibold mt-10 mb-5">
+      <div className="border-2 border-white mt-5 p-2">
+        <div className="grid grid-cols-[1fr_1fr_2fr_1fr_1fr] gap-4 border-b-2 border-white  pb-2 font-semibold mt-2  mb-5">
           <div>ID</div>
           <div>Name</div>
           <div>Email</div>
