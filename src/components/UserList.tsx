@@ -1,34 +1,53 @@
 import type { User } from "./types/user";
+import { useState } from "react";
 type UserListProps = {
   users: User[];
 };
 
 export const UserList = ({ users }: UserListProps) => {
+  const [search, setSearch] = useState("");
+
+  // search user
+  const filteredUsers = users.filter(
+    (user) =>
+      user.name.toLowerCase().includes(search.toLowerCase()) ||
+      user.email.toLowerCase().includes(search.toLowerCase()),
+  );
+
   return (
     <div>
-      <h2 className="text-2xl flex justify-center my-5 font-bold">User List</h2>
+      <div className="flex justify-between bg-white mt-2 rounded-2xl px-2">
+        <h2 className="text-2xl flex justify-center my-1 font-bold">
+          User List
+        </h2>
+        <input
+          className="bg-gray-100 h-8 mt-1 rounded-2xl px-2 outline-none"
+          type="text"
+          placeholder="Search user.."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
 
       <div>
-        <div className="flex gap-10 border-b pb-1">
-          <div className="w-35 pl-5 font-semibold">ID</div>
-          <div className="w-35 font-semibold pl-2">Name</div>
-          <div className="w-40 font-semibold pl-10">Email</div>
-          <div className="w-35 font-semibold pl-3">Role</div>
-          <div className="w-35 font-semibold pl-2">Status</div>
+        <div className="grid grid-cols-[1fr_1fr_2fr_1fr_1fr] gap-4 border-b-2 border-white  pb-2 font-semibold mt-10 mb-5">
+          <div>ID</div>
+          <div>Name</div>
+          <div>Email</div>
+          <div>Role</div>
+          <div>Status</div>
         </div>
         <div>
-          {users.map((user) => (
+          {filteredUsers.map((user) => (
             <div
-              className="flex gap-10 my-5 p-1 bg-gray-400 rounded-xl h-10 "
+              className="grid grid-cols-[1fr_1fr_2fr_1fr_1fr] gap-4 my-3 p-2 bg-gray-100 rounded-xl "
               key={user.id}
             >
-              <div className="w-35">{user.id}</div>
-              <div className="w-35">{user.name}</div>
-              <div className="w-40">{user.email}</div>
-              <div className="w-35">{user.role}</div>
-              <div className="w-35 ">
-                {user.isActive ? "Active" : "Inactive"}
-              </div>
+              <div>{user.id}</div>
+              <div>{user.name}</div>
+              <div>{user.email}</div>
+              <div>{user.role}</div>
+              <div>{user.isActive ? "Active" : "Inactive"}</div>
             </div>
           ))}
         </div>
