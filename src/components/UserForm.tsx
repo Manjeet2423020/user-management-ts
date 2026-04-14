@@ -53,10 +53,10 @@ export const UserForm = ({ onAddUser, onClose }: UserFormProps) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center ">
-      <div className="bg-white relative flex items-center flex-col  h-80 w-[400px] rounded-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 ">
+      <div className="bg-white relative flex items-center flex-col  h-120 w-[400px] rounded-2xl">
         <div>
-          <div className="  py-3 flex justify-end pr-3 text-2xl font-semibold bg-gray-300 w-[400px] ">
+          <div className="  py-3 flex justify-end pr-3 text-2xl font-semibold bg-gray-300 w-[400px] border-t-2 rounded-2xl border-gray-200 ">
             User Form
           </div>
           <div className="absolute left-5 top-[60px] transform -translate-y-1/2">
@@ -66,53 +66,61 @@ export const UserForm = ({ onAddUser, onClose }: UserFormProps) => {
           </div>
         </div>
 
-        <div className="flex justify-end gap-2 mt-15 flex-col">
+        <div className="flex justify-end gap-2 mt-15 flex-col w-full px-5">
           <div className="flex flex-col">
-            <div className="flex flex-col gap-3 ">
-              <div className="flex gap-2 justify-center items-center">
-                <h2>Name :-</h2>
-                <input
-                  className="border-b p-1 outline-none "
-                  type="text"
-                  placeholder="Name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-              <div className="flex gap-2 justify-center items-center">
-                <h2>Email :-</h2>
-                <input
-                  type="email"
-                  className="border-b p-1 outline-none"
-                  placeholder="email"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                />
+            <div className="flex flex-col gap-3 w-full ">
+              <div className="flex flex-col">
+                <div className="flex flex-col gap-1">
+                  <h2>Name -</h2>
+                  <input
+                    className="border-2 border-gray-200 p-1 outline-none rounded-xl "
+                    type="text"
+                    placeholder="Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col gap-1 ">
+                  <h2>Email -</h2>
+                  <input
+                    type="email"
+                    className="border-2 border-gray-200 p-1 outline-none rounded-xl"
+                    placeholder="email"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
+                  />
+                </div>
               </div>
               {/* create a role option to chose role admin or user */}
 
-              <div className="flex gap-5 justify-center mt-4">
-                <select
-                  className=" p-1"
-                  value={role}
-                  onChange={(e) => setRole(e.target.value as Role)}
-                >
-                  <option value="Admin">Admin</option>
-                  <option value="User">User</option>
-                </select>
+              <div className="flex flex-col gap-3 justify-center mt-2 w-[30%]">
+                <div className="flex flex-col gap-1">
+                  <span>Select role</span>
+                  <select
+                    className=" p-1 border-2 border-gray-300 rounded-xl cursor-pointer outline-none"
+                    value={role}
+                    onChange={(e) => setRole(e.target.value as Role)}
+                  >
+                    <option value="Admin">Admin</option>
+                    <option value="User">User</option>
+                  </select>
+                </div>
 
                 {/* create a checkbox for check active or not user */}
 
-                <label className="flex items-center gap-2  p-1 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={isActive}
-                    onChange={(e) => setIsActive(e.target.checked)}
-                  />
-                  <span>isActive</span>
-                </label>
+                <div className="flex flex-col gap-1">
+                  <span>status</span>
+                  <label className="flex items-center gap-2  p-1 border-2 border-gray-300 rounded-xl cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={isActive}
+                      onChange={(e) => setIsActive(e.target.checked)}
+                    />
+                    <span>isActive</span>
+                  </label>
+                </div>
               </div>
             </div>
 
