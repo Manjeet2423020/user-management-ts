@@ -72,7 +72,7 @@ export const Home = () => {
           )}
         </div>
         <div className="flex  flex-wrap justify-between w-full mt-3 gap-1 md:gap-0 mr-6 sm:mr-0">
-          <div className="lg:w-[32%] sm:w-[48%] w-full h-[130px] border-2 rounded-xl flex flex-wrap border-gray-300">
+          <div className="lg:w-[32%] sm:w-[48%] w-full h-[130px] border-2 rounded-xl  border-gray-300">
             <div className="p-2">
               <div className="flex items-center justify-between">
                 <h1 className="font-semibold text-gray-500/80">Total users</h1>
