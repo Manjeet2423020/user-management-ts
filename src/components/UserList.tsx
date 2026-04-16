@@ -24,13 +24,13 @@ export const UserList = ({ users }: UserListProps) => {
           <h2 className="text-2xl flex justify-center my-1 font-bold">
             User List
           </h2>
-          <span className="text-xs border p-1 bg-gray-200 border-gray-300 rounded-lg">
+          <span className="text-xs border px-2 mt-1  bg-gray-100 border-gray-300 rounded-lg">
             1240 users
           </span>
         </div>
         <div className="flex flex-wrap gap-2">
           <input
-            className="bg-gray-200  mt-1 rounded-2xl px-2 outline-none"
+            className="bg-gray-100  mt-1 rounded-2xl px-4 outline-none"
             type="text"
             placeholder="Search user.."
             value={search}

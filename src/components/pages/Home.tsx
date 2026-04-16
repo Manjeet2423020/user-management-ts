@@ -25,36 +25,36 @@ export const Home = () => {
         <div className="border-r-2 border-gray-300 w-[160px] min-h-screen flex flex-col justify-between">
           <div className="flex flex-col gap-3">
             <img className="w-[80%] mb-5" src={img} alt="photo" />
-            <h2 className="flex items-center justify-start pl-2 gap-2 text-base bg-gray-200 rounded-xl w-[100px] h-[40px]">
+            <h2 className="flex items-center justify-start pl-4 gap-2 text-base bg-gray-100 rounded-xl w-[120px] h-[40px]">
               <FiUsers /> Users
             </h2>
-            <h2 className="flex items-center justify-start pl-2 gap-2 text-base w-[100px] h-[40px]">
+            <h2 className="flex items-center justify-start pl-4 gap-2 text-base w-[100px] h-[40px]">
               <BsGraphUpArrow />
               sales
             </h2>
-            <h2 className="flex items-center justify-start pl-2 gap-2 text-base w-[100px] h-[40px]">
+            <h2 className="flex items-center justify-start pl-4 gap-2 text-base w-[100px] h-[40px]">
               <FaRegCreditCard />
               Finances
             </h2>
-            <h2 className="flex items-center justify-start pl-2 gap-2 text-base w-[100px] h-[40px]">
+            <h2 className="flex items-center justify-start pl-4 gap-2 text-base w-[100px] h-[40px]">
               <MdContentCopy />
               Content
             </h2>
-            <h2 className="flex items-center justify-start pl-2 gap-2 text-base w-[100px] h-[40px]">
+            <h2 className="flex items-center justify-start pl-4 gap-2 text-base w-[100px] h-[40px]">
               <GoReport />
               Disputes
             </h2>
-            <h2 className="flex items-center justify-start pl-2 gap-2 text-base w-[100px] h-[40px]">
+            <h2 className="flex items-center justify-start pl-4 gap-2 text-base w-[100px] h-[40px]">
               <MdOutlineForwardToInbox />
               Inbox
             </h2>
-            <h2 className="flex items-center justify-start pl-2 gap-2 text-base w-[100px] h-[40px]">
+            <h2 className="flex items-center justify-start pl-4 gap-2 text-base w-[100px] h-[40px]">
               <IoSettingsOutline />
               Settings
             </h2>
           </div>
           <div className="flex justify-end flex-col">
-            <h2 className="flex items-center justify-start pl-2 mb-8 gap-2 text-base w-[100px] h-[40px]">
+            <h2 className="flex items-center justify-start pl-4 mb-8 gap-2 text-base w-[100px] h-[40px]">
               <MdLogout />
               Log out
             </h2>
@@ -66,7 +66,9 @@ export const Home = () => {
           <h2 className="text-2xl flex gap-2 items-center">
             User Management <FaUser />
           </h2>
-          <Button onClick={() => setIsOpen(true)}>Add User</Button>
+          <Button className="px-2" onClick={() => setIsOpen(true)}>
+            Add User
+          </Button>
           {isOpen && (
             <UserForm onAddUser={addUser} onClose={() => setIsOpen(false)} />
           )}
@@ -76,7 +78,7 @@ export const Home = () => {
             <div className="p-2">
               <div className="flex items-center justify-between">
                 <h1 className="font-semibold text-gray-500/80">Total users</h1>
-                <div className="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-2xl">
+                <div className="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-2xl">
                   <FiUsers />
                 </div>
               </div>
@@ -91,7 +93,7 @@ export const Home = () => {
             <div className="p-2">
               <div className="flex items-center justify-between">
                 <h1 className="font-semibold text-gray-500/80">New users</h1>
-                <div className="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-2xl">
+                <div className="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-2xl">
                   <FiUsers />
                 </div>
               </div>
@@ -106,7 +108,7 @@ export const Home = () => {
             <div className="p-2">
               <div className="flex items-center justify-between">
                 <h1 className="font-semibold text-gray-500/80">Active users</h1>
-                <div className="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-2xl">
+                <div className="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-2xl">
                   <FiUsers />
                 </div>
               </div>
